@@ -83,7 +83,8 @@ const loginUsuario = async (req, res = response) => {
 
 const renovarToken = async (req, res = response) => {
 
-  // const uid = req.uid;
+  try {
+     // const uid = req.uid;
   // const name = req.name;
   const {uid, name} = req;
 
@@ -95,8 +96,11 @@ const renovarToken = async (req, res = response) => {
   res.json({
     ok:true,
     token
-  })
-}
+  }) 
+  } catch (error) {
+    console.log(error)
+  }
+} 
 
 module.exports = {
   crearUsuario,
